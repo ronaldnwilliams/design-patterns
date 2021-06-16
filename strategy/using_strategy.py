@@ -4,7 +4,7 @@ from dataclass import dataclass
 
 @dataclass
 class Charge:
-    init: bool
+    succeeded: bool
 
 
 class PaymentProvider(ABC):
