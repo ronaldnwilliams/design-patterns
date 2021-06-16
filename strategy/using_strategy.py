@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
-from typing import Type
+from dataclass import dataclass
 
 
+@dataclass
 class Charge:
-    def __init__(self, succeeded: bool):
-        self.succeeded = succeeded
+    succeeded: bool
 
 
 class PaymentProvider(ABC):
@@ -15,10 +15,12 @@ class PaymentProvider(ABC):
         pass
 
 
+@dataclass
 class User:
-    payment_method: Type[PaymentProvider]
+    payment_method: PaymentProvider
 
 
+@dataclass
 class Product:
     price: float
     description: str
